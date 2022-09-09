@@ -1,8 +1,24 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+
+const instance = axios.create({
+	baseURL: 'test',
+	auth: {
+		username: 'staging-tester',
+		password: 'c3c3c3'
+	},
+	headers: {
+		Accept: 'application/json',
+		'Content-Type': 'application/json',
+		'Accept-Language': 'sv'
+	},
+	withCredentials: true
+});
 
 function App() {
+
   return (
     <div className="App">
       <header className="App-header">
@@ -16,7 +32,6 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
         </a>
       </header>
     </div>
